@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 var bodyParser = require('body-parser')
-
+// const sslRedirect = require('heroku-ssl-redirect');
+// app.use(sslRedirect());
 
 app.set('view engine', 'ejs');
 app.set("views","./views"); 
@@ -13,4 +14,4 @@ app.get('/',(req,res)=>{
     res.render('home');
 });
 
-app.listen(8080);
+app.listen(process.env.PORT || 3000);
